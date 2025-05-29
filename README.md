@@ -1,10 +1,22 @@
-return (
+'use client';
+
+import { motion } from 'framer-motion';
+
+export default function Hero() {
+  const scrollToAbout = () => {
+    const aboutSection = document.getElementById('about');
+    if (aboutSection) {
+      aboutSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  return (
     <section className="relative flex flex-col items-center justify-center min-h-screen px-6 bg-black text-white overflow-hidden">
-      {/* GRADIENT BACKGROUND */}
+
       <div className="absolute inset-0 bg-gradient-to-br from-purple-500/30 via-pink-400/20 to-transparent pointer-events-none z-0" />
 
       <div className="text-center max-w-4xl z-10 mt-24">
-        {/* HEADING */}
+
         <motion.h1
           initial={{ opacity: 0, y: -40 }}
           animate={{ opacity: 1, y: 0 }}
@@ -17,7 +29,6 @@ return (
           </span>
         </motion.h1>
 
-        {/* SUBTEXT */}
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -29,7 +40,6 @@ return (
           Instead of reinventing the wheel, we’ve chosen to enhance it.
         </motion.p>
 
-        {/* BUTTON */}
         <motion.button
           whileHover={{ scale: 1.05 }}
           onClick={scrollToAbout}
@@ -37,7 +47,6 @@ return (
         >
           <span className="relative z-10">✨ Get Started</span>
 
-          {/* GLOW ANIMATION */}
           <motion.span
             className="absolute left-[-150%] top-0 w-full h-full bg-white/20 blur-2xl"
             animate={{ left: ['-150%', '150%'] }}
@@ -51,4 +60,3 @@ return (
       </div>
     </section>
   );
-}
