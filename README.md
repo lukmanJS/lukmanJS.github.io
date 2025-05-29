@@ -1,16 +1,4 @@
-'use client';
-
-import { motion } from 'framer-motion';
-
-export default function Hero() {
-  const scrollToAbout = () => {
-    const aboutSection = document.getElementById('about');
-    if (aboutSection) {
-      aboutSection.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
-  return (
+return (
     <section className="relative flex flex-col items-center justify-center min-h-screen px-6 bg-black text-white overflow-hidden">
       {/* GRADIENT BACKGROUND */}
       <div className="absolute inset-0 bg-gradient-to-br from-purple-500/30 via-pink-400/20 to-transparent pointer-events-none z-0" />
